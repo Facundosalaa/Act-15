@@ -1,0 +1,132 @@
+/* ================================
+   Guía de JS – Índice de Actividades
+   styles.css
+   ================================ */
+
+/* Reset suave */
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+
+/* Paleta y tokens */
+:root{
+  --bg: #f6f7fb;
+  --card: #ffffff;
+  --text: #1f2937;          /* gris oscuro legible */
+  --subtext: #6b7280;       /* gris medio */
+  --brand: #3b82f6;         /* azul */
+  --brand-strong: #2563eb;  /* azul más intenso */
+  --border: #e5e7eb;
+  --shadow: 0 10px 25px rgba(0,0,0,.06);
+  --radius: 16px;
+}
+
+/* Base */
+body{
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  color: var(--text);
+  background:
+    radial-gradient(1200px 600px at 100% -10%, #eaf2ff 0%, rgba(234,242,255,0) 60%),
+    radial-gradient(800px 400px at -10% 110%, #ffe9ea 0%, rgba(255,233,234,0) 60%),
+    var(--bg);
+  line-height: 1.5;
+}
+
+/* Layout principal */
+main{
+  max-width: 960px;
+  margin: 24px auto 56px;
+  padding: 0 20px;
+}
+
+/* Header */
+header{
+  max-width: 960px;
+  margin: 32px auto 8px;
+  padding: 0 20px;
+}
+
+header h1{
+  margin: 0 0 6px 0;
+  font-size: clamp(1.4rem, 2.5vw, 1.9rem);
+  font-weight: 800;
+  letter-spacing: .2px;
+}
+
+header h2{
+  margin: 0;
+  font-size: clamp(1rem, 2vw, 1.15rem);
+  font-weight: 600;
+  color: var(--subtext);
+}
+
+/* Contenedor del índice */
+nav{
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 22px 18px;
+}
+
+/* Lista ordenada */
+nav ol{
+  margin: 0;
+  padding-left: 14px;      /* deja el número, pero más compacto */
+  counter-reset: item;
+}
+
+/* Item como “fila” */
+nav li{
+  list-style: decimal-leading-zero;
+  margin: 0;
+  padding: 10px 12px;
+  border-radius: 12px;
+  transition: background-color .2s ease, transform .06s ease;
+  border: 1px solid transparent;
+}
+
+/* Separadores sutiles entre items */
+nav li + li{ margin-top: 6px; }
+
+/* Enlaces */
+nav a{
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+/* Hover/Focus accesible */
+nav li:hover{
+  background: #f3f7ff;
+  border-color: #e3edff;
+}
+nav a:hover{ color: var(--brand-strong); }
+
+nav a:focus{
+  outline: none;
+}
+nav li:has(a:focus-visible){
+  outline: 2px solid var(--brand);
+  outline-offset: 2px;
+}
+
+/* Estado activo opcional: si alguna vez marcás el actual con .active */
+nav li.active{
+  background: #eef4ff;
+  border-color: #d9e6ff;
+}
+nav li.active a{
+  color: var(--brand-strong);
+}
+
+/* Tipografía responsiva de los items (por si los textos son largos) */
+@media (max-width: 560px){
+  nav li{ padding: 10px 10px; }
+  nav a{ font-size: .98rem; font-weight: 600; }
+}
+
+/* Pequeñas mejoras de selección y scroll */
+::selection{
+  background: #cfe1ff;
+}
+html{ scroll-behavior: smooth; }

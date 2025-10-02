@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>AA13</title>
+  <meta charset="UTF-8">
+</head>
+<body>
+<script>
+  let suma = 0;
+  let valor;
+
+  do {
+    const entrada = prompt("Ingrese un valor (9999 para terminar):");
+    if (entrada === null) break; 
+    valor = parseInt(entrada, 10);
+
+    if (!Number.isNaN(valor) && valor !== 9999) {
+      suma += valor;
+    }
+  } while (valor !== 9999);
+
+  document.write("El valor acumulado es: " + suma + "<br>");
+  if (suma === 0) {
+    document.write("El valor es cero");
+  } else if (suma > 0) {
+    document.write("El valor es mayor que cero");
+  } else {
+    document.write("El valor es menor que cero");
+  }
+</script>
+</body>
+</html>

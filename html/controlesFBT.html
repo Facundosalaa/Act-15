@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="UTF-8"><title>FORM/TEXT 2</title></head>
+<body>
+
+<form>
+  <p>Valor 1: <input type="text" id="n1"></p>
+  <p>Valor 2: <input type="text" id="n2"></p>
+  <p><input type="button" value="Mostrar mayor" onclick="mayor()"></p>
+</form>
+
+<script>
+function mayor() {
+  let aTxt = document.getElementById('n1').value.trim();
+  let bTxt = document.getElementById('n2').value.trim();
+
+  // aceptar coma decimal
+  let a = parseFloat(aTxt.replace(',', '.'));
+  let b = parseFloat(bTxt.replace(',', '.'));
+
+  if (Number.isNaN(a) || Number.isNaN(b)) {
+    alert('Ingresá números válidos en ambos campos.');
+    return;
+  }
+
+  if (a > b) {
+    alert('Mayor: ' + a);
+  } else if (b > a) {
+    alert('Mayor: ' + b);
+  } else {
+    alert('Son iguales: ' + a);
+  }
+}
+</script>
+
+</body>
+</html>

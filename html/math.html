@@ -1,0 +1,16 @@
+<button onclick="potencia()">Potencia</button>
+<script type="text/javascript">
+  function potencia() {
+    const t = prompt("Ingrese el número");
+    if (t === null) return; // canceló
+    const num = parseInt(t, 10);
+
+    if (Number.isNaN(num)) {
+      alert("Ingresá un número entero válido.");
+      return;
+    }
+
+    const numPotencia = Math.pow(num, 3); // o: num ** 3
+    document.write("El número " + num + " elevado a 3 es igual a: " + numPotencia);
+  }
+</script>

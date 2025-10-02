@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Control TEXTAREA - Libro de visitas</title>
+</head>
+<body>
+
+<form>
+  <p>Nombre: <input type="text" id="nombre"></p>
+  <p>Mail: <input type="text" id="mail"></p>
+  <p>Comentarios:</p>
+  <p><textarea id="comentarios" rows="8" cols="50" maxlength="500"></textarea></p>
+  <p><input type="button" value="Enviar" onclick="mostrarDatos()"></p>
+</form>
+
+<script>
+function mostrarDatos() {
+  let nom = document.getElementById('nombre').value.trim();
+  let correo = document.getElementById('mail').value.trim();
+  let com = document.getElementById('comentarios').value.trim();
+
+  if (!nom || !correo || !com) {
+    alert('Completá nombre, mail y comentarios.');
+    return;
+  }
+
+  // Validación sencilla de email
+  const okMail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(correo);
+  if (!okMail) {
+    alert('Ingresá un mail válido.');
+    return;
+  }
+
+  alert('Nombre: ' + nom + '\nMail: ' + correo + '\nComentarios:\n' + com);
+}
+</script>
+
+</body>
+</html>

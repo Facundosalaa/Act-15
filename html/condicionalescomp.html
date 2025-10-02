@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <title>Condicional compuesta 2</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body class="container">
+  <h1>Compuesta 2: Promedio de 3 notas</h1>
+  <hr style="margin: .75rem 0;">
+
+  <script type="text/javascript">
+    const n1 = parseFloat(prompt("Ingrese primera nota:"));
+    const n2 = parseFloat(prompt("Ingrese segunda nota:"));
+    const n3 = parseFloat(prompt("Ingrese tercera nota:"));
+
+    if ([n1, n2, n3].some(Number.isNaN)) {
+      document.write("Entrada inválida. Recargá y probá de nuevo.");
+    } else {
+      const promedio = (n1 + n2 + n3) / 3;
+
+      document.write("Notas: " + n1 + ", " + n2 + ", " + n3 + "<br>");
+      document.write("Promedio: " + promedio.toFixed(2) + "<br>");
+
+      if (promedio >= 4) {
+        document.write("Resultado: regular");
+      } else {
+        document.write("Resultado: reprobado");
+      }
+    }
+  </script>
+</body>
+</html>

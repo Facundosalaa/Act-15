@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Control PASSWORD - Comparar claves</title>
+</head>
+<body>
+
+  <form>
+    Ingrese su clave:
+    <input type="password" id="clave1" required minlength="8"><br>
+    Repita su clave:
+    <input type="password" id="clave2" required minlength="8"><br>
+
+    <label>
+      <input type="checkbox" onclick="toggle()"> Mostrar claves
+    </label>
+    <br><br>
+
+    <input type="button" value="Validar" onclick="comparar()">
+  </form>
+
+  <script>
+    function toggle() {
+      const a = document.getElementById('clave1');
+      const b = document.getElementById('clave2');
+      const tipo = a.type === 'password' ? 'text' : 'password';
+      a.type = tipo; b.type = tipo;
+    }
+
+    function comparar() {
+      // Nota: en producción normalmente NO se hace trim() a contraseñas.
+      const c1 = document.getElementById('clave1').value;
+      const c2 = document.getElementById('clave2').value;
+
+      if (c1.length === 0 || c2.length === 0) {
+        alert('Completá ambas claves.');
+        return;
+      }
+      if (c1.length < 8) {
+        alert('La clave debe tener al menos 8 caracteres.');
+        return;
+      }
+      alert(c1 === c2 ? 'Las claves coinciden' : 'Las claves NO coinciden');
+    }
+  </script>
+
+</body>
+</html>

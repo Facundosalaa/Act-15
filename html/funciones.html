@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>De menor a mayor</title>
+</head>
+<body>
+  <script>
+    function cargarEnteros() {
+      let entero1 = parseInt(prompt("Ingrese el entero menor:"), 10);
+      let entero2 = parseInt(prompt("Ingrese el entero mayor:"), 10);
+
+      if (Number.isNaN(entero1) || Number.isNaN(entero2)) {
+        alert("Ingresá números enteros válidos.");
+        return;
+      }
+
+      // si vienen invertidos, los doy vuelta
+      if (entero1 > entero2) {
+        let aux = entero1;
+        entero1 = entero2;
+        entero2 = aux;
+      }
+
+      for (let f = entero1; f <= entero2; f++) {
+        document.write(f + " ");
+      }
+    }
+    cargarEnteros();
+  </script>
+</body>
+</html>

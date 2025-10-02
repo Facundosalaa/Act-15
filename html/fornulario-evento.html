@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Formularios y Eventos - Botones</title>
+</head>
+<body>
+
+  <!-- sin form -->
+  <input type="button" value="1" onclick="mostrar(this)">
+  <input type="button" value="2" onclick="mostrar(this)">
+  <input type="button" value="3" onclick="mostrar(this)">
+
+  <script>
+    function mostrar(btn) {
+      alert('Se presionó el botón ' + btn.value);
+    }
+  </script>
+
+</body>
+</html>

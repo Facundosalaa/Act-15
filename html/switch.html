@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Traductor simple</title>
+</head>
+<body>
+<script>
+  const app = document.createElement("div");
+  document.body.appendChild(app);
+
+  const s = "Ingresá una de estas palabras: <br>- casa<br>- mesa<br>- perro<br>- gato";
+  app.innerHTML = s;
+
+  function traductor() {
+    const t = prompt("Ingresá la palabra a traducir (casa, mesa, perro, gato):", "casa");
+    if (t === null) return; // cancelado
+
+    const w = t.trim().toLowerCase();
+    let traduccion = "";
+
+    switch (w) {
+      case "casa":
+        traduccion = "house";
+        break;
+      case "mesa":
+        traduccion = "table";
+        break;
+      case "perro":
+        traduccion = "dog";
+        break;
+      case "gato":
+        traduccion = "cat";
+        break;
+      default:
+        app.innerHTML += "<br><em>Palabra inválida. Probá con: casa, mesa, perro o gato.</em>";
+        return;
+    }
+
+    app.innerHTML += "<br><strong>Traducción:</strong> " + traduccion;
+  }
+
+  traductor();
+</script>
+</body>
+</html>

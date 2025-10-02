@@ -1,0 +1,16 @@
+<button onclick="nombres()">Ingresar nombres</button>
+<script type="text/javascript">
+  function nombres() {
+    let num = 0;
+    let nombre = prompt("Ingrese un nombre o 'Fin' para terminar");
+
+    while (nombre !== null && nombre.trim().toLowerCase() !== "fin") {
+      if (nombre.trim() !== "") { // opcional: no contar vacíos
+        num++;
+      }
+      nombre = prompt("Ingrese un nombre o 'Fin' para terminar");
+    }
+
+    document.write("Se ingresaron " + num + " nombres");
+  }
+</script>
